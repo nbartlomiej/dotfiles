@@ -20,15 +20,22 @@ set nocompatible " explicitly get out of vi-compatible mode
 " Explicitly informing that we're using 256-color terminals
 let &t_Co=256
 
-
-set nocompatible               " be iMproved
 filetype off                   " required!
 
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Vundler config
 "
-set rtp+=~/.vim/vundle.git/ 
-call vundle#rc()
+
+let root = '/tmp/vundle_bundles/'
+let src = 'http://github.com/gmarik/vundle.git' 
+" let src = '~/.vim/bundle/vundle/.git' 
+
+if !isdirectory(expand(root).'/vundle')
+  exec '!git clone '.src.' '.root.'/vundle'
+endif
+
+exec 'set rtp+='.root.'/vundle'
+call vundle#rc(root)
 
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Vundler Bundles:
