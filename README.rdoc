@@ -2,15 +2,14 @@
 
 == About
 
-This repository contains all kinds of config files used by me (i.e.
-nbartlomiej).
+This repository contains all kinds of config files used by me.
 
 == Installation
 
 Install necessary ruby gems
 
-    bundle install
+    $ bundle install
 
 Run installation script
 
-    rake home:install
+    $ rake home:install
