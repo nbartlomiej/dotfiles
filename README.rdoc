@@ -1,0 +1,6 @@
+= Dotfiles
+
+== About
+
+This repository contains all kinds of config files used by me (i.e.
+nbartlomiej).
