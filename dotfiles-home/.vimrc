@@ -9,32 +9,29 @@
 " INSTALLATION:
 "
 "   (1) Run this command (to download the Vundler plugin):
-"       git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git
+"       git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 "   (2) Run vim and execute:
 "       :BundleInstall
 "
 
-set nocompatible " explicitly get out of vi-compatible mode
+" Disabling vi-compatible mode.
+set nocompatible
 
-" Explicitly informing that we're using 256-color terminals
+" Explicitly informing that we're using 256-color terminals.
 let &t_Co=256
 
-filetype off                   " required!
 
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Vundler config
 "
 
-let root = '~/.vim/vundle_bundles/'
-let src = 'http://github.com/gmarik/vundle.git' 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-if !isdirectory(expand(root).'/vundle')
-  exec '!git clone '.src.' '.root.'/vundle'
-endif
-
-exec 'set rtp+='.root.'/vundle'
-call vundle#rc(root)
+" Let Vundle manage Vundle (required).
+Bundle 'gmarik/vundle'
 
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Vundler Bundles:
@@ -44,7 +41,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
 
+
+" Filetype detection, filetype plugins, indent files. Also, required by
+" Vundle.
 filetype plugin indent on
+
+" Enabling syntax highlight.
 syntax on
 
 set ai "Auto indent
