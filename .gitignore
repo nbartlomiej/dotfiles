@@ -1,0 +1,8 @@
+# bundler's detailed gem version locks
+Gemfile.lock
+
+# RVM initial config
+.rvmrc
+
+# vim temp files
+*.swp
