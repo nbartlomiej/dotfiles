@@ -68,7 +68,10 @@ set number
 runtime! macros/matchit.vim
 
 " mark trailing spaces, tabs
-" set list listchars=trail:.,extends:>
+" set list listchars=trail:~,extends:>
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Sets how many lines of history VIM has to remember
 set history=1000
