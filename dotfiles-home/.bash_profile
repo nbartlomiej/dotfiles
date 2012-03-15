@@ -17,4 +17,4 @@ fi
 export PATH=~/.cabal/bin:$PATH
 
 # Setting the default editor to VIM
-export EDITOR=vim
+export EDITOR=/usr/local/Cellar/macvim/7.3-57/MacVim.app/Contents/MacOS/Vim
