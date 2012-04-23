@@ -1,4 +1,4 @@
-" A .vimrc that serves me in daily tasks.
+" A .vimrc that serves me in daily tasks (@nbartlomiej).
 "
 " REQUIREMENTS:
 "
@@ -23,7 +23,7 @@ let &t_Co=256
 
 
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
-" Vundler config
+" Vundler config.
 "
 
 filetype off
@@ -36,7 +36,7 @@ Bundle 'gmarik/vundle'
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Vundler Bundles:
 "
-" repositories on github
+" Repositories on github.
 Bundle 'tpope/vim-fugitive'
 Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
@@ -49,34 +49,33 @@ filetype plugin indent on
 " Enabling syntax highlight.
 syntax on
 
-set ai "Auto indent
-set si "Smart indet
+set ai " Auto indent.
+set si " Smart indet.
 
 set tabstop=2
 set shiftwidth=2
 set softtabstop=4
 set colorcolumn=80
 
-set showmatch " birefly jump to the matching brace on brace insert
+set showmatch " Birefly jump to the matching brace on brace insert.
 set expandtab
 set smarttab
 
 set hls
 set number
 
-" Load matchit (% to bounce from do to end, etc.)
+" Load matchit (% to bounce from do to end, etc.).
 runtime! macros/matchit.vim
 
-" mark trailing spaces, tabs
-" set list listchars=trail:~,extends:>
+" Mark trailing spaces, tabs.
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
-" Sets how many lines of history VIM has to remember
+" Sets how many lines of history VIM has to remember.
 set history=1000
 
-" highlighting the line with cursor
+" Highlighting the line with cursor.
 set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
