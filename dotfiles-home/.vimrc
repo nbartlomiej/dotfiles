@@ -9,7 +9,7 @@
 " INSTALLATION:
 "
 "   (1) Run this command (to download the Vundler plugin):
-"       git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"       git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 "   (2) Run vim and execute:
 "       :BundleInstall
@@ -80,12 +80,5 @@ set history=1000
 set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-
-" setting window width to 80
-function SetWindowWidthToEighty ()
-  vertical-resize 20
-endfunction
-
-"autocmd WinEnter *.rb :call SetWindowWidthToEighty()
 
 colorscheme twilight-nbartlomiej
