@@ -80,4 +80,7 @@ set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
+" Autocommand, reloading .vimrc after editing.
+au! BufWritePost .vimrc source %
+
 colorscheme twilight-nbartlomiej
