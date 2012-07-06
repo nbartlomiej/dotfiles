@@ -40,6 +40,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'godlygeek/csapprox'
 Bundle 'godlygeek/tabular'
+Bundle 'kana/vim-arpeggio'
 
 
 " Filetype detection, filetype plugins, indent files. Also, required by
@@ -82,5 +83,68 @@ autocmd WinLeave * setlocal nocursorline
 
 " Autocommand, reloading .vimrc after editing.
 au! BufWritePost .vimrc source %
+
+" Mapping leader to space.
+let mapleader = " "
+
+map <Leader>q :q<CR>
+map <Leader>a :wa<CR>
+map <Leader>w :w<CR>
+
+" Jumping to next window with Leader.
+map <Leader>h h
+map <Leader>j j
+map <Leader>k k
+map <Leader>l l
+
+" Browsing tabs with Leader.
+map <Leader>n gt
+map <Leader>p gT
+
+" Convert:
+"   method(one, two, three)
+"
+" Into:
+"   method(
+"     one, two, three
+"   )
+map <Leader>f12 ci(O"
+
+" Convert:
+"   method(one, two, three)
+"
+" Into:
+"   method(
+"     one,
+"     two,
+"     three
+"   )
+map <Leader>f13 <Leader>f12:s/, /,\r/g=i(
+
+map <Leader>o ok
+map <Leader>O Oj
+
+map <Leader>vc :colorscheme twilight-nbartlomiej
+
+map <Leader>vn :noh<CR>
+
+inoremap <C-C> Don't use C-C
+vnoremap <C-C> Don't use C-C
+nnoremap <C-C> g
+
+" Ensure that Arpeggio plugin is loaded.
+call arpeggio#load()
+
+" Use (jk) as Escape.
+Arpeggio  noremap jk <Esc>
+Arpeggio inoremap jk <Esc>l
+Arpeggio cnoremap jk <C-C>
+
+" Don't hit same key twice, hit two keys at once.
+Arpeggio noremap ds dd
+Arpeggio noremap gf gg
+
+Arpeggio noremap oi o<Esc>k
+Arpeggio noremap op O<Esc>j
 
 colorscheme twilight-nbartlomiej
